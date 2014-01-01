@@ -1,0 +1,5 @@
+albums/*
+tmp/*
+*.dat
+class/filedb.class.php
+class/config.inc.php

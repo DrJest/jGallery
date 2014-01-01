@@ -1,0 +1,34 @@
+{
+  "values":
+  {
+    "name":     "Default Template",
+    "version":  "0.1",
+    "author":   "Dr.Jest",
+    "site":     "http://",
+    "langs":    ["en"],
+    "body_cls": "metrouicss"
+  },
+  "files":
+  {
+    "js":
+    {
+      "default":
+      [
+        "js/assets/jquery.mousewheel.min.js",
+        "js/assets/moment.js",
+        "js/assets/moment_langs.js",
+        "js/modern/dropdown.js"
+      ]
+    },
+    "css":
+    {
+      "default":
+      [
+        "css/modern.css",
+        "css/modern-responsive.css",
+        "css/prettify.css",
+        "css/site.css"
+      ]
+    }
+  }
+}

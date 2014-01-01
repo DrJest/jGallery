@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteRule ^logout$ index.php?do=admin&action=logout
+RewriteRule ^admin$ index.php?do=admin
+RewriteRule ^([0-9]+)$ index.php?mgpage=$1
+RewriteRule ^album-([0-9]+)$ album-$1/
+RewriteRule ^album-([0-9]+)/$ index.php?album=$1
+RewriteRule ^album-([0-9]+)/([0-9]+)$ index.php?album=$1&img=$2
+

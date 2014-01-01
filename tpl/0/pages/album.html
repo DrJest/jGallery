@@ -1,0 +1,31 @@
+<div class="page with-sidebar">
+  
+  <div class="page-header">
+    <div class="page-header-content">
+      <a href="{$gallery.url}"><h1>{$gallery.title}</h1></a>
+    </div>
+  </div>
+  
+  <div class="page-sidebar">
+    <ul>
+      <li><a href="/"><i class="icon-home"></i>Homepage</a></li>
+      <li class="sticker sticker-color-blue"><a href="/gallery"><i class="icon-pictures"></i>Gallery</a></li>
+    </ul>
+  </div>
+  
+  <div class="page-region">
+    <div class="page-region-content">
+      <h3>{$album.title}</h3>
+        <div class="image-collection">	
+
+          {loop="$pics"}
+            <div>
+              <img src="{$value.urlthumb}#" />
+              <div class="overlay"> <a href="?view=image&album={$album.id}&id={$value.id}">{$value.caption}</a> </div>
+            </div>
+          {/loop}
+
+    </div>
+  </div>
+  
+</div>

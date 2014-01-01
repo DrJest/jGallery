@@ -1,0 +1,46 @@
+<div class="page with-sidebar">
+  
+  <div class="page-header">
+    <div class="page-header-content">
+      <a href="{$gallery.url}"><h1>{$gallery.title}</h1></a>
+    </div>
+  </div>
+  
+  <div class="page-sidebar">
+    <ul>
+      <li><a href="/"><i class="icon-home"></i>Homepage</a></li>
+      <li class="sticker sticker-color-blue"><a href="/gallery"><i class="icon-pictures"></i>Gallery</a></li>
+    </ul>
+  </div>
+  
+  <div class="page-region">
+    <div class="page-region-content">
+      <h3>{$album.title}</h3>
+      Click on the picture to see fullscreen
+      <br><br>
+      <div id="image-div" style="text-align:center">
+        <h4 id="imgtitle">{$image.caption}</h4>
+        <div id="image-container">
+          <img src="{$image.url}#" style="max-height: 400px; max-width:500px;cursor:-webkit-zoom-in;cursor:-moz-zoom-in;" onclick="fullScreen(this)" id="image">
+        </div>
+        <p class="padding5">
+          <span style="float: right; clear: both" id="controls">
+            {if="$image.id==1"}
+              Prev
+            {else}
+              <a href="?view=image&album={$album.id}&id={$image.id-1}">Prev</a>
+            {/if}
+            |
+            {if="$image.id==$album.picsno"}
+              Next
+            {else}
+              <a href="?view=image&album={$album.id}&id={$image.id+1}">Next</a>
+            {/if}
+          </span>
+          <br><br>
+          <a href="?view=album&id={$album.id}">Back to the Index</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

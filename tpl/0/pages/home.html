@@ -1,0 +1,59 @@
+﻿<div class="page with-sidebar">
+  <div class="page-header">
+    <div class="page-header-content">
+      <a href="{$gallery.url}"><h1>{$gallery.title}</h1></a>
+    </div>
+  </div>
+  
+  <div class="page-sidebar">
+    <ul>
+      <li><a href="/"><i class="icon-home"></i>Homepage</a></li>
+      <li class="sticker sticker-color-blue"><a href="/gallery"><i class="icon-pictures"></i>Gallery</a></li>
+    </ul>
+  </div>
+  
+  <div class="page-region">
+    <div class="page-region-content">
+
+      <div style="overflow:auto; width:100%">
+        {loop="$albums"}
+          <div class="image-container light" style="float:left">
+            <a href="?view=album&id={$value.id}" style="display:block; min-height:163px">
+              <img  src="{$value.urlthumb}#" style="max-height: 160px" />
+            </a>
+            <div class="overlay">
+              <a href="?album={$value.id}">{$value.title}</a>
+                ({$value.picsno})
+              <div>
+                {$value.description}
+              </div>
+            </div>
+          </div>
+        {/loop}
+      </div>
+
+      <br>
+      <div style="width:100%; text-align:center" class="mgtxt">
+        {if="$curpage > 1"}
+          <a href="?page=1">{$lang.firstpage}</a>
+          <a href="?page={$curpage-1}">{$lang.prevpage}</a>
+        {else}
+          {$lang.firstpage}
+          {$lang.prevpage}
+        {/if}
+        
+        
+        {$curpage}
+        
+        
+        {if="$curpage != $numpages"}
+          <a href="?page={$curpage+1}">{$lang.nextpage}</a>
+          <a href="?page={$numpages}">{$lang.lastpage}</a>
+        {else}
+          {$lang.nextpage}
+          {$lang.lastpage}
+        {/if}
+      </div>
+    </div>
+  </div>
+</div>
